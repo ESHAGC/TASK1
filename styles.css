@@ -1,0 +1,116 @@
+/* Reset some default styles */
+body, h1, h2, p {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #fff;
+    background: url('background-image.webp') no-repeat center center fixed;
+    background-size: cover;
+    overflow-x: hidden;
+    transition: background 0.5s ease;
+}
+
+/* Header styles */
+header {
+    background: rgba(0, 0, 0, 0.6);
+    text-align: center;
+    padding: 100px 20px;
+    opacity: 0;
+    transform: translateY(-50px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+header h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    transition: color 0.5s ease;
+}
+
+header p {
+    font-size: 1.5em;
+    margin-bottom: 30px;
+    transition: color 0.5s ease;
+}
+
+header a.btn-primary {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    color: #151414;
+    background-color: rgb(0, 225, 255);
+    text-decoration: none;
+    border-radius: 5px;
+    transform: scale(1);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+header a.btn-primary:hover {
+    background-color: rgb(7, 226, 131);
+    transform: scale(1.1);
+}
+
+/* Info section styles */
+.info-section {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 50px 20px;
+    text-align: left; /* Align text to the left */
+    position: absolute; /* Position it absolutely */
+    left: 0; /* Align it to the left side of the page */
+    width: 100%; /* Make it full width */
+    max-width: 800px; /* Set a maximum width for content */
+    margin: 0; /* Remove any default margins */
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.info-section h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.info-section p {
+    font-size: 1.2em;
+    max-width: 100%; /* Ensure full width usage */
+    margin: 0; /* Remove margin for left alignment */
+}
+
+/* Footer styles */
+footer {
+    background: rgba(0, 0, 0, 0.6);
+    text-align: center;
+    padding: 20px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    font-size: 1em;
+}
+
+/* Add animation effects */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Apply animations */
+header, .info-section {
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+/* Delayed animation for the info section */
+.info-section {
+    animation-delay: 0.5s;
+}
